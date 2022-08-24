@@ -33,8 +33,13 @@ router.post("/register", (req, res) => {
     });
 });
 
-router.get("/logout", (req, res) => {
-    req.logout();
+router.post("/logout", (req, res) => {
+    req.logout(function(err) {
+        if (err) {
+          return next(err);
+        }
+        return res.redirect("/login");
+      });
     res.redirect('/');
 });
 
