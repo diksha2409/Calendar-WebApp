@@ -15,7 +15,7 @@ const calendarRoutes = require('./routes/calendar'),
 const connectString = "mongodb+srv://ankit1234:ankit1234@cluster0-glzmx.mongodb.net/test?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(connectString, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true}).then(() => {
+mongoose.connect(connectString).then(() => {
     console.log("Database connected...");
 }).catch(() => {
     console.log("Cannot connect to the database...");
